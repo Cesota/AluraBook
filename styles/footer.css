@@ -55,6 +55,11 @@ hr {
 
     .parceiros__lista__item:hover {
         transform: scale(1.07);
+        color: var(--cor-titulo);
+    }
+
+    .parceiros__lista__item:hover > .lista__link {
+        color: var(--cor-titulo);
     }
 
     .lista__link {
@@ -64,11 +69,6 @@ hr {
         color: var(--cor-parceiros-footer);
         margin-left: 0.5em;
     }
-
-    .lista__link:hover {
-        color: var(--cor-titulo);
-    }
-
 }
 
 @media screen and (min-width:1728px) {
