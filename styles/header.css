@@ -1,0 +1,205 @@
+.cabecalho__menu-hamburguer {
+    width: 48px;
+    height: 48px;
+    background-image: url("../Imagens/header/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    padding: .7em .5em;
+    transition: 0.2s linear;    
+}
+
+.cabecalho {
+    background-color: var(--branco);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 3;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    transition: 0.2s linear;   
+}
+
+.container__imagem {
+    padding: 1em;
+    transition: 0.3s ease-in-out;
+}
+
+.container__titulo, .container__texto, .navbar, .container__botao {
+    display: none;
+}
+
+.container__botao:checked ~ .lista-menu {
+   left: 0;
+}
+
+.container__botao:checked ~ .label > .cabecalho__menu-hamburguer {
+    background-image: url("../Imagens/header/MenuAberto.svg");
+}
+
+.container__botao:checked ~ .label {
+    background-color: var(--cor-azul-card);
+}
+
+.lista-menu {
+    position: absolute;
+    top: 100%;
+    left: -100%;
+    min-width: 300px;
+    width: 60vw;
+    z-index: 2;
+    transition: left 0.2s ease-in-out;
+}
+
+.lista-menu__titulo {
+    color: var(--cor-titulo);
+    font-weight: 700;
+}
+
+.lista-menu__item, .lista-menu__titulo {
+    padding: 1em;
+    background-color: var(--branco);
+    transition: all 0.1s linear;
+}
+
+.lista-menu__link {
+    text-decoration: none;
+    background: var(--azul-degrade);
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+.lista-menu__item:active {
+    background-color: var(--cor-azul-card);
+}
+
+.lista-menu__item:active > .lista-menu__link  {
+    background: var(--branco);
+    background-clip: text; 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@media screen and (min-width: 1024px) {
+    .cabecalho {
+        padding: 0 3em;
+    }
+
+    .cabecalho__menu-hamburguer, .container__imagem-invisivel, .lista-menu, .navbar__botao {
+        display: none;
+    }
+
+    .container__titulo {
+        display: block;
+        font-family: var(--fonte-logo);
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .container__titulo--negrito {
+        font-weight: 700;
+    }
+
+    .container__imagem:hover {
+        transform: scale(1.2);
+    }
+
+    .navbar {
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        height: 75px;
+        width: 450px;
+    }
+
+    .navbar__botao:checked ~ .navbar__lista {
+        display: block;
+    }
+
+    .navbar__item {
+        display: inline-block;
+        padding: 0 1em;
+        text-decoration: none;
+        color: var(--cor-azul-card);
+        transition: all 0.4s ease-in-out;
+    }
+
+    .navbar__item:hover {
+        font-weight: 500;
+        transform: scale(1.04);
+    }
+
+    .navbar__botao:checked ~ .navbar__label > .navbar-menu--dark {
+        background: var(--azul-degrade);
+        color: var(--branco);
+        padding: 27px 1em;
+    }
+
+    .navbar__lista {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 5.6%;
+        background-color: var(--branco);
+        width: 180px;
+    }
+
+    .lista__item {
+        padding: 1em 1em;
+        transition: all 0.6s ease-in-out;
+        opacity: 85%;
+    }
+
+    .lista__item:active, .lista__item:hover {
+        background: var(--azul-degrade);
+        opacity: 100%;
+    }
+
+    .item__link {
+        text-decoration: none;
+        background: var(--azul-degrade);
+        background-clip: text; 
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 1s ease-in-out;
+    }
+
+    .lista__item:active > .item__link, .lista__item:hover > .item__link {
+        -webkit-text-fill-color: var(--branco);
+    }
+}
+
+@media screen and (min-width:1728px) { 
+    .navbar {
+        margin-right: auto;
+        margin-left: 0.7em;
+    }
+    
+    .container__texto {
+        display: block;
+        font-size: 20px;
+        color: var(--cor-azul-card);  
+    }
+
+    .container__icones {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        margin-right: 1.5em;
+    }
+
+    .navbar-menu--dark {
+        cursor: pointer;
+    }
+
+}
+

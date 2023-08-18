@@ -1,0 +1,126 @@
+.card {  
+    background-color: var(--branco);
+    margin: 1.5em;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.card__descricao {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.descricao__titulo {
+    color: var(--cor-titulo);
+    font-weight: 700;
+}
+
+.descricao__titulo-livro {
+    color: var(--cor-azul-card);
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0.5em 0;
+    
+}
+
+.descricao__texto {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--cor-texto-card);
+}
+
+.descricao__imagem {
+   width: 160px;
+   height: 160px; 
+   transition: 0.2s ease-in;
+}
+
+.card__botoes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: .5em 0 0 0;
+}
+
+.botoes {
+    display: flex;
+}
+
+.botoes__item {
+    margin: 0 0.5em;
+}
+
+.botoes__item > img {
+    transition: transform 0.2s ease-in;
+}
+
+.botoes__ancora {
+    background-color: var(--cor-titulo);
+    color: var(--branco);
+    font-weight: 700;
+    width: 155px;
+    height: 56px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0s ease-in-out;
+}
+
+.botoes__ancora:active {
+    transform: scale(1.07);
+    font-size: 18px;
+    background: var(--azul-degrade);
+}
+
+.descricao__estrelas {
+    color: var(--cor-titulo);
+    margin-bottom: 0.5em;
+    font-size: 0.8em;
+}
+
+.bi {
+    margin-right: .5em;
+}
+
+@media screen and (min-width:1024px) {
+    .card {
+        width: 45%;
+        margin: 2em auto;
+        
+    }
+
+    .descricao__imagem:hover {
+        transform: scale(1.07);
+    }
+
+    .botoes__ancora {
+        transition: 0.2s ease-in-out;
+    }
+
+    .botoes__ancora:hover {
+        transform: scale(1.07);
+        font-size: 18px;
+    }
+
+    .botoes__item:hover > img {
+        transform: scale(1.3);
+    }
+}
+
+@media screen and (min-width:1728px) {
+    .descricao__titulo {
+        font-size: 32px;
+        line-height: 1.3em;
+    }
+
+    .card__botoes {
+        margin-top: 1.2em;
+    }
+
+    .card {
+        margin-top: 4em;
+    }
+}
